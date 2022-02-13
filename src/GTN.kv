@@ -34,11 +34,17 @@
         GridLayout:
             cols: 3
             size_hint: 1, 0.5
+            canvas.before:
+                Color:
+                    rgba: 1, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
             Button:
                 text: '1'
-                canvas.before:
+                canvas:
                     Color:
-                        rgba: 1, 0, 1, 1
+                        rgba: 0, 0, 1, 0.4
                     Rectangle:
                         pos: self.pos
                         size: self.size

@@ -15,7 +15,7 @@ from kivy.uix.widget import Widget
 class GTNApp(App):
     def build(self):
         self.input = ''
-        main = BoxLayout(orientation='vertical', )  # Лейбл основного окна
+        main = BoxLayout(orientation='vertical', )  # Лейбл основного окна.
 
         top = BoxLayout(orientation='horizontal', size_hint=(1, 0.1))
         center = BoxLayout(orientation='vertical', size_hint=(1, 0.4))

@@ -3,16 +3,15 @@
 # kivy 2.0.0
 
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
+from kivy.uix.widget import Widget
 
+class Main(Widget):
+    pass
 
 class GTNApp(App):
     def build(self):
         return Main()
 
-class Main(BoxLayout):
-    pass
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     GTNApp().run()
+

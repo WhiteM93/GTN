@@ -1,0 +1,53 @@
+
+<Main>
+
+	BoxLayout:
+		orientation: 'vertical'
+		size: root.width, root.height
+		BoxLayout:
+		    orientation: 'horizontal'
+		    size_hint: 1,0.1
+		    GridLayout:
+		        cols: 2
+
+		        Label:
+		            text: "Очки:"
+		        Label:
+		            text: "0"
+		        Label:
+		            text: "Лучший результат:"
+		        Label:
+		            text: "0"
+            Label:
+                text: "Дата"
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1,0.4
+            Label:
+                text: 'Угадай число от Х до У'
+            Label:
+                text: 'Подсказка'
+            Label:
+                text: 'Подсказка'
+            Label:
+                text: 'Ввод с клавиатуры'
+        GridLayout:
+            cols: 3
+            size_hint: 1, 0.5
+            canvas.before:
+                Color:
+                    rgba: 1, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: '1'
+                canvas:
+                    Color:
+                        rgba: 0, 0, 1, 0.4
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+

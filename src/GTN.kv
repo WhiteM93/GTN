@@ -1,6 +1,20 @@
+<TestButton@Button>
+    background_color: 0, 0, 0, 0
+    canvas.before:
+        Color:
+            rgba: 0, 0.5, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
 <Main>
-
+    score:score
+    records:records
+    data1:data1
+    help:help
+    answer:answer
+    datainput:datainput
+    enter:enter
 	BoxLayout:
 		orientation: 'vertical'
 		size: root.width, root.height
@@ -9,45 +23,105 @@
 		    size_hint: 1,0.1
 		    GridLayout:
 		        cols: 2
-
 		        Label:
 		            text: "Очки:"
 		        Label:
-		            text: "0"
+		            id: score
+		            text: ""
 		        Label:
 		            text: "Лучший результат:"
+		            multiline: False
 		        Label:
-		            text: "0"
+		            id: records
+		            text: ""
             Label:
-                text: "Дата"
+                id: data1
+                text: ''
         BoxLayout:
             orientation: 'vertical'
             size_hint: 1,0.4
             Label:
-                text: 'Угадай число от Х до У'
+                text: 'Угадай число от 1 до 10'
+                font_size: 35
+                color: 1,0.8,0,1
             Label:
+                id: help
+                font_size: 30
+                color: 0.5,0,0,1
                 text: 'Подсказка'
             Label:
-                text: 'Подсказка'
+                id: answer
+                font_size: 40
+                color: 1,1,1,1
+                text: 'Ответ'
             Label:
-                text: 'Ввод с клавиатуры'
+                id: datainput
+                text: ''
         GridLayout:
             cols: 3
             size_hint: 1, 0.5
-            canvas.before:
-                Color:
-                    rgba: 1, 0, 0, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-            Button:
+            padding: 10
+            spacing: 10
+            TestButton:
+                id: b1
                 text: '1'
-                canvas:
-                    Color:
-                        rgba: 0, 0, 1, 0.4
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
-
+                on_press:
+                    datainput.text += b1.text
+            TestButton:
+                id: b2
+                text: '2'
+                on_press:
+                    datainput.text += b2.text
+            TestButton:
+                id: b3
+                text: '3'
+                on_press:
+                    datainput.text += b3.text
+            TestButton:
+                id: b4
+                text: '4'
+                on_press:
+                    datainput.text += b4.text
+            TestButton:
+                id: b5
+                text: '5'
+                on_press:
+                    datainput.text += b5.text
+            TestButton:
+                id: b6
+                text: '6'
+                on_press:
+                    datainput.text += b6.text
+            TestButton:
+                id: b7
+                text: '7'
+                on_press:
+                    datainput.text += b7.text
+            TestButton:
+                id: b8
+                text: '8'
+                on_press:
+                    datainput.text += b8.text
+            TestButton:
+                id: b9
+                text: '9'
+                on_press:
+                    datainput.text += b9.text
+            TestButton:
+                id: AC
+                text: 'AC'
+                on_press:
+                    datainput.text = ''
+            TestButton:
+                id: b0
+                text: '0'
+                on_press:
+                    datainput.text += b0.text
+            TestButton:
+                id: enter
+                text: 'Enter'
+                on_press:
+                    root.random_number()
+                    datainput.text = ''
 
 
